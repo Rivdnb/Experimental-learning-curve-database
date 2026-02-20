@@ -206,14 +206,14 @@ def mysim(run ,df, d_config, dataset):# (run-number, data, dataset-configuration
                 "test_means": test_mean_scores_list
             }
         }
-    os.makedirs("./lc", exist_ok=True)
-    filepath = os.path.join("./lc", f"{dataset}_{pid}.jsonl")
+    os.makedirs("./database", exist_ok=True)
+    filepath = os.path.join("./database", f"{dataset}_{pid}.jsonl")
     with open(filepath, "a") as f:
         f.write(json.dumps(json_instance) + "\n")
 # Save learning curve to CSV
     #csv_instance.append((dataset,d_config["seed"],lr,n_est,max_dpt,min_smpl_splt,min_smpl_leaf,sub_smpl,cv_time,lc))
     #df_lc = pd.DataFrame(csv_instance)
-    #df_lc.to_csv('./lc/placeholder.csv', mode='a', index=False, header=False)
+    #df_lc.to_csv('./database/placeholder.csv', mode='a', index=False, header=False)
 
 
 def main(): 

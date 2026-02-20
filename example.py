@@ -29,7 +29,7 @@ def extract_info(curves):
             cfg['subsample']
         ]
         X.append(x_vec)
-        # Scores, options: val_means|test_means
+        # Scores, options: c['learning_curve'][val_means|test_means]
         y.append(c['learning_curve']['val_means'])
     anchors = curves[0]["learning_curve"]["anchors"]
     dataset = curves[0]["dataset"]
@@ -81,9 +81,8 @@ def surrogate_modeling(X, y, anchors, dataset):
 
 # --- Main ---
 if __name__ == '__main__':
-    dataset_paths = ["./lc/lc_waveform.jsonl"] # Path to learning curve JSONL file
-    for path in dataset_paths:
-        curves = load_curves(path)
-        X, y, anchors, dataset = extract_info(curves)
-    # Experiment 1
-        surrogate_modeling(X, y, anchors, dataset)
+    dataset_paths = ["./database/waveform.jsonl"] # Path to learning curve JSONL file
+    curves = load_curves(path)
+    X, y, anchors, dataset = extract_info(curves)
+# Example experiment
+    surrogate_modeling(X, y, anchors, dataset)

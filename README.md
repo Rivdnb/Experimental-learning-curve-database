@@ -6,6 +6,7 @@ General notes
 - The mean_val_curves_plots folder contains plots of all mean validation learning curves for each dataset (same datasets as the database folder).
 - job.py is the code for producing the learning curves.
 - example.py demonstrates basic usage of the database
+
 Instructions job.py
 - In order to run job.py, you require a dataset in CSV format. Any utf-8 values need to be decoded so it may work with the Gradient Boosting classifier.
 - At the top you can find the dataset configuration, where the file paths and random seeds are tied to the datasets. If you want to run this code with a new dataset, make sure to include it in this configuration.
